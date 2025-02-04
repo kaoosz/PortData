@@ -16,7 +16,7 @@ datasource db {
 
 model Contato {
   id Int @unique @default(autoincrement())
-  nome String //colocar index
+  nome String
   telefone String @unique
   grupos Contatos_Grupos[]
 

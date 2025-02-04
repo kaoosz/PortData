@@ -9,7 +9,7 @@ export interface IGruposRepository {
     delete(id: number): Promise<IGrupos>;
     listByIdContatos(id: number): Promise<IGrupos | null>;
     createContatosGrupos(data: CreateContatosGruposDto): Promise<IContatosGrupos>;
-    reportContatosGrupos(): Promise<Array<{grupo: string, quantidade_contatos: number} | [] >>; //mudar tipo [] ou string?
+    reportContatosGrupos(): Promise<Array<{grupo: string, quantidade_contatos: number} | [] >>;
     findExistsByName(name: string): Promise<IGrupos | null>
     findById(id: number): Promise<IGrupos | null>
     findContatoGruposExist(id_grupo: number,id_contato: number): Promise<any>;
