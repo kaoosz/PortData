@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Contato {
+  id Int @unique @default(autoincrement())
+  nome String //colocar index
+  telefone String @unique
+  grupos Contatos_Grupos[]
+
+  @@index([nome])
+}
+
+model Grupo {
+  id Int @unique @default(autoincrement())
+  nome String @unique
+  contatos Contatos_Grupos[]
+}
+
+model Contatos_Grupos {
+  id_contato Int
+  id_grupo Int
+  contato Contato @relation(fields: [id_contato],references: [id],onDelete: Cascade)
+  grupo Grupo @relation(fields: [id_grupo],references: [id], onDelete: Cascade)
+  
+  @@unique([id_contato,id_grupo])
+  @@index([id_grupo])
+
+}
