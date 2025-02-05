@@ -2,7 +2,7 @@
 ## ⚙️ Clonar o Repositório
 
 ```
-git clone https://github.com/kaoosz/Ozmap.git
+git clone https://github.com/kaoosz/PortData.git
 ```
 🔧 Configuração do Ambiente
 
