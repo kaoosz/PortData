@@ -108,6 +108,19 @@ Exemplo de URL Completa:
 http://localhost:3001/grupos/4
 ```
 
+(POST) Criar Contatos-Grupos relação.
+
+Rota: /contatos-grupos
+http://localhost:3001/contatos-grupos
+
+Exemplo de Request:
+```
+{
+    "id_grupo": 5,
+    "id_contato": 16
+}
+```
+
 (GET) Grupos Contatos
 
 Rota: /grupos/4/contatos  
